@@ -9,10 +9,10 @@
  * to ensure they don't run until the DOM is ready.
  */
 $(function() {
-    /* This is our first test suite - a test suite just contains
-    * a related set of tests. This suite is all about the RSS
-    * feeds definitions, the allFeeds variable in our application.
-    */
+    /*  This is our first test suite - a test suite just contains
+     *  a related set of tests. This suite is all about the RSS
+     *  feeds definitions, the allFeeds variable in our application.
+     */
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
@@ -89,13 +89,11 @@ $(function() {
       beforeEach(function(done) {
           // assuming the same allFeeds array is in use as the one of length 4
           // that currently appears in app.js
-          loadFeed(3, function() { done(); });
+          loadFeed(3, done);
       });
 
-      // assuming '.entry' here refers to the containing entry-link
-      it('present after loadFeed', function(done) {
-          expect($('.feed').children().length).toBeGreaterThan(0);
-          done();
+      it('present after loadFeed', function() {
+          expect($('.feed .entry').length).toBeGreaterThan(0);
       });
     });
 
@@ -113,15 +111,15 @@ $(function() {
         beforeEach(function(done) {
             loadFeed(0, function() {
                 feedA = $('.feed').html();
-                loadFeed(1, function() { done(); });
+                loadFeed(1, function() {
+                    feedB = $('.feed').html();
+                    done();
+                });
             });
-            feedB = $('.feed').html();
-            done();
         });
 
-        it('yields different feed', function(done) {
+        it('yields different feed', function() {
             expect(feedA).not.toEqual(feedB);
-            done();
         });
 
     });
