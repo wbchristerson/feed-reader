@@ -1,6 +1,6 @@
 # The Jasmine Library For A Feed Reader Application
 
-This is a web-based application developed by Udacity which reads RSS feeds. As an exercise in writing tests using the [Jasmine](http://jasmine.github.io/) library, I have added some tests to exam simple functionality involving the loaded feeds and the menu.
+This is a web-based application developed by Udacity which reads RSS feeds. As an exercise in writing tests using the [Jasmine](http://jasmine.github.io/) library, I have added some tests to `feed-reader/jasmine/spec/feedreader.js` to examine simple functionality involving the loaded feeds and the menu.
 
 ### Running The Application
 
